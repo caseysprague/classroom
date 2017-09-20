@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/checkout/{uuid}/{type}', 'LogController@checkout')->name('checkout');
+Route::get('/checkin/{uuid}/{logEntryId}', 'LogController@checkin')->name('checkin');

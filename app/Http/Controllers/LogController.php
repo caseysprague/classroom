@@ -22,7 +22,7 @@ class LogController extends Controller
             'type' => $type,
         ]);
 
-    	return view('checkout')->with(['message' => 'You are checked out.', 'uuid' => $uuid, 'logEntry' => $logEntry]);
+    	return view('checkout')->with(['message' => 'You are checked out.', 'uuid' => $uuid, 'logEntry' => $logEntry, 'checkoutType' => $type]);
     }
 
     public function checkin($uuid, $logEntryId) {

@@ -1,5 +1,13 @@
 @extends('layouts.minimal')
 
+@section('head')
+	@if($checkoutType == 'Bathroom')
+		<link rel="apple-touch-icon" href="/img/bathroom-touch-icon.png">
+	@elseif($checkoutType == 'Library')
+		<link rel="apple-touch-icon" href="/img/library-touch-icon.png">
+	@endif
+@endsection
+
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">

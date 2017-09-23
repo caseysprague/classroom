@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
+	protected $primaryKey = 'uuid';
+
+	public $incrementing = false;
+
     protected $fillable = [
         'uuid', 'name'
     ];

@@ -19,7 +19,7 @@ class LogController extends Controller
         $logEntry = LogEntry::create([
             'student_id' => $student->uuid,
             'time_out' => new Carbon(),
-            'type' => $type,
+            'type' => ucfirst($type),
         ]);
 
     	return view('checkout')->with(['message' => 'You are checked out.', 'uuid' => $uuid, 'logEntry' => $logEntry, 'checkoutType' => $type]);

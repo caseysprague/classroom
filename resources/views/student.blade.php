@@ -28,6 +28,7 @@
                 <div class="card-header">{{ $student->name }}'s Log Entries</div>
 
                 <div class="card-body">
+                    @if($student->logEntries->count() > 0)
                     <table class="table table-sm">
                         <thead>
                             <td class="border-top-0"><b>Trip Type</b></td>
@@ -44,6 +45,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                    No log entries.
+                    @endif
                 </div>
             </div>
         </div>

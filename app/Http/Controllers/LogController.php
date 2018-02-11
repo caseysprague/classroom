@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Student;
 use App\LogEntry;
 use Carbon\Carbon;
 
 class LogController extends Controller
 {
-    public function checkout($uuid, $type) {
-    	$student = Student::where('uuid', $uuid)->firstOrFail();
+    public function checkout($uuid, $type)
+    {
+        $student = Student::where('uuid', $uuid)->firstOrFail();
 
         // Maybe we should save their UUID to the session so we don't have to reference it in the view?
 
@@ -22,10 +22,11 @@ class LogController extends Controller
             'type' => ucfirst($type),
         ]);
 
-    	return view('checkout')->with(['message' => 'You are checked out.', 'uuid' => $uuid, 'logEntry' => $logEntry, 'checkoutType' => $type]);
+        return view('checkout')->with(['message' => 'You are checked out.', 'uuid' => $uuid, 'logEntry' => $logEntry, 'checkoutType' => $type]);
     }
 
-    public function checkin($uuid, $logEntryId) {
+    public function checkin($uuid, $logEntryId)
+    {
         $student = Student::where('uuid', $uuid)->firstOrFail();
 
         $logEntry = $student->logEntries->where('id', $logEntryId)->first();

@@ -2,23 +2,24 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{ $student->name }}</div>
-                <div class="panel-body">
-                    <table class="table">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-default">
+                <div class="card-header">{{ $student->name }}</div>
+
+                <div class="card-body">
+                    <table class="table table-sm">
                         <thead>
-                            <td><b>Trip Type</b></td>
-                            <td><b>Time Out</b></td>
-                            <td><b>Time In</b></td>
+                            <td class="border-top-0"><b>Trip Type</b></td>
+                            <td class="border-top-0"><b>Time Out</b></td>
+                            <td class="border-top-0"><b>Time In</b></td>
                         </thead>
                         <tbody>
                             @foreach($student->logEntries as $logEntry)
                             <tr>
-                                <td>{{ $logEntry->type }}</td>
-                                <td>{{ $logEntry->time_out }}</td>
-                                <td>{{ $logEntry->time_in }}</td>
+                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->type }}</td>
+                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_out }}</td>
+                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_in }}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -18,7 +18,7 @@
                             <tr>
                                 <td class="pt-2 pb-2 align-middle">{{ $student->name }}</td>
                                 <td class="pt-2 pb-2">
-                                    <a class="btn btn-sm btn-primary float-right" href="{{ url('/student/'.$student->uuid) }}">View Logs</a>
+                                    <a class="btn btn-sm btn-primary float-right" href="{{ url('/student/'.$student->uuid) }}">View</a>
                                 </td>
                             </tr>
                             @endforeach

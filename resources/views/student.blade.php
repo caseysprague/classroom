@@ -2,10 +2,30 @@
 
 @section('content')
 <div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="card card-default">
+                <div class="card-header">{{ $student->name }}'s Profile</div>
+
+                <div class="card-body">
+                    <div class="d-flex flex-column">
+                        <div>
+                            <div class="float-left">Bathroom URL:</div>
+                            <a href="{{ url('/checkout/'.$student->uuid.'/bathroom') }}" class="float-right">{{ url('/checkout/'.$student->uuid.'/bathroom') }}</a>
+                        </div>
+                        <div>
+                            <div class="float-left">Library URL:</div>
+                            <a href="{{ url('/checkout/'.$student->uuid.'/library') }}" class="float-right">{{ url('/checkout/'.$student->uuid.'/library') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">{{ $student->name }}</div>
+                <div class="card-header">{{ $student->name }}'s Log Entries</div>
 
                 <div class="card-body">
                     <table class="table table-sm">

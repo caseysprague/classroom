@@ -14,6 +14,11 @@ class Student extends Model
         'uuid', 'name'
     ];
 
+    public function teacher()
+    {
+        return $this->belongsTo('App\User', 'teacher_id');
+    }
+
     public function logEntries()
     {
         return $this->hasMany('App\LogEntry', 'student_id', 'uuid');

@@ -11,10 +11,11 @@ class LogEntry extends Model
     ];
 
     protected $dates = [
-    	'time_out', 'time_in',
+        'time_out', 'time_in',
     ];
 
-    public function student() {
-    	$this->hasOne('App\Student');
+    public function student()
+    {
+        $this->hasOne('App\Student');
     }
 }

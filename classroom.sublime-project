@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": [
+				"classroom/node_modules"
+			]
+		}
+	],
+    "build_systems":
+    [
+        {
+            "name": "Laravel Mix (Production)",
+			"shell_cmd": "npm run production",
+			"working_dir": "${project_path}"
+        },
+		{
+		    "name": "Laravel Mix (Development)",
+			"shell_cmd": "npm run dev",
+			"working_dir": "${project_path}"
+		},
+        {
+            "name": "Laravel Mix (Watch)",
+			"shell_cmd": "npm run watch",
+			"working_dir": "${project_path}"
+        }
+    ]
+}

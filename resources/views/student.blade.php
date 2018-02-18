@@ -48,6 +48,7 @@
                             <td class="border-top-0"><b>Trip Type</b></td>
                             <td class="border-top-0"><b>Time Out</b></td>
                             <td class="border-top-0"><b>Time In</b></td>
+                            <td class="border-top-0"><b>Duration (Minutes)</b></td>
                         </thead>
                         <tbody>
                             @foreach($student->logEntries as $logEntry)
@@ -55,6 +56,7 @@
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->type }}</td>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_out }}</td>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_in }}</td>
+                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->duration_minutes }}</td>
                             </tr>
                             @endforeach
                         </tbody>

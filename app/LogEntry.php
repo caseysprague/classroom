@@ -14,8 +14,17 @@ class LogEntry extends Model
         'time_out', 'time_in',
     ];
 
+    protected $appends =  [
+        'duration_minutes'
+    ];
+
     public function student()
     {
         $this->hasOne('App\Student');
+    }
+
+    public function getDurationMinutesAttribute()
+    {
+        return $this->time_out->diffInMinutes($this->time_in);
     }
 }

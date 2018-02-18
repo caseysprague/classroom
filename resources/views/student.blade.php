@@ -5,17 +5,31 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">{{ $student->name }}'s Profile</div>
+                <div class="card-header">{{ $student->name }}'s URLs for Check Out</div>
 
                 <div class="card-body">
                     <div class="d-flex flex-column">
-                        <div>
-                            <div class="float-left">Bathroom URL:</div>
-                            <a href="{{ url('/checkout/'.$student->uuid.'/bathroom') }}" class="float-right">{{ url('/checkout/'.$student->uuid.'/bathroom') }}</a>
+                        <div class="form-group row">
+                            <label for="bathroom-url-input" class="col-sm-2 col-form-label">Bathroom</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="bathroom-url-input" aria-label="Bathroom URL" value="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}" readonly>
+                                    <div class="input-group-append">
+                                        <copy-button id="bathroom-url-copy-button" classes="btn btn-primary" contents-to-copy="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}"></copy-button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="float-left">Library URL:</div>
-                            <a href="{{ url('/checkout/'.$student->uuid.'/library') }}" class="float-right">{{ url('/checkout/'.$student->uuid.'/library') }}</a>
+                        <div class="form-group row">
+                            <label for="library-url-input" class="col-sm-2 col-form-label">Library</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="library-url-input" aria-label="Library URL" value="{{ url('/checkout/'.$student->uuid.'/Library') }}" readonly>
+                                    <div class="input-group-append">
+                                        <copy-button id="library-url-copy-button" classes="btn btn-primary" contents-to-copy="{{ url('/checkout/'.$student->uuid.'/Library') }}"></copy-button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -21,6 +21,6 @@ class Student extends Model
 
     public function logEntries()
     {
-        return $this->hasMany('App\LogEntry', 'student_id', 'uuid');
+        return $this->hasMany('App\LogEntry', 'student_id', 'uuid')->orderBy('created_at', 'desc');
     }
 }

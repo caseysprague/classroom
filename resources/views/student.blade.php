@@ -15,7 +15,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="bathroom-url-input" aria-label="Bathroom URL" value="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}" readonly>
                                     <div class="input-group-append">
-                                        <copy-button id="bathroom-url-copy-button" classes="btn btn-primary" contents-to-copy="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}"></copy-button>
+                                        <copy-button classes="btn btn-primary" copy-value="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}"></copy-button>
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="library-url-input" aria-label="Library URL" value="{{ url('/checkout/'.$student->uuid.'/Library') }}" readonly>
                                     <div class="input-group-append">
-                                        <copy-button id="library-url-copy-button" classes="btn btn-primary" contents-to-copy="{{ url('/checkout/'.$student->uuid.'/Library') }}"></copy-button>
+                                        <copy-button classes="btn btn-primary" copy-value="{{ url('/checkout/'.$student->uuid.'/Library') }}"></copy-button>
                                     </div>
                                 </div>
                             </div>

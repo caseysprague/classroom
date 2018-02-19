@@ -1,12 +1,12 @@
 <template>
-    <button :id="id" :class="classes" :data-clipboard-text="contentsToCopy" type="button">
-        Copy
+    <button :class="classes" :data-clipboard-text="copyValue" type="button">
+        <slot>Copy</slot>
     </button>
 </template>
 
 <script>
     export default {
-        props: ['id', 'classes', 'contentsToCopy'],
+        props: ['classes', 'copyValue'],
         mounted() {
             var Clipboard = require('clipboard');
             new Clipboard('.btn');

@@ -12,9 +12,9 @@ class StudentController extends Controller
         return view('students');
     }
 
-    public function show($uuid)
+    public function show(Student $student)
     {
-        $student = \Auth::user()->students()->where('uuid', $uuid)->with('logEntries')->firstOrFail();
+        abort_unless(request()->user()->students->contains($student), 403);
         return view('student')->with('student', $student);
     }
 

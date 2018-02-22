@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/students', 'StudentController@index')->name('students');
-Route::get('/student/{uuid}', 'StudentController@show')->name('student');
+Route::get('/student/{student}', 'StudentController@show')->name('student');
 Route::post('/student', 'StudentController@store');
 
-Route::get('/checkout/{uuid}/{type}', 'LogController@checkout')->name('checkout');
-Route::get('/checkin/{uuid}/{logEntryId}', 'LogController@checkin')->name('checkin');
+Route::get('/checkout/{student}/{type}', 'LogController@checkout')->name('checkout');
+Route::get('/checkin/{student}/{logEntry}', 'LogController@checkin')->name('checkin');

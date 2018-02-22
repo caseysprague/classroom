@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use App\LogEntry;
-use Carbon\Carbon;
 
 class LogController extends Controller
 {
@@ -16,7 +15,7 @@ class LogController extends Controller
 
         $logEntry = LogEntry::create([
             'student_id' => $student->uuid,
-            'time_out' => new Carbon(),
+            'time_out' => now(),
             'type' => ucfirst($type),
         ]);
 
@@ -27,7 +26,7 @@ class LogController extends Controller
     {
         abort_unless($student->logEntries->contains($logEntry), 403);
 
-        $logEntry->time_in = new Carbon();
+        $logEntry->time_in = now();
         $logEntry->save();
 
         return view('checkin')->with(['message' => 'You are now checked in!']);

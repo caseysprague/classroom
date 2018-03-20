@@ -15,7 +15,11 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         abort_unless(request()->user()->students->contains($student), 403);
-        return view('student')->with('student', $student);
+
+        return view('student')->with([
+            'student' => $student,
+            'logEntries' => $student->logEntries()->paginate(15)
+        ]);
     }
 
     public function store()

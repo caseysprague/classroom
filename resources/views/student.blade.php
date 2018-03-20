@@ -42,7 +42,7 @@
                 <div class="card-header">{{ $student->name }}'s Log Entries</div>
 
                 <div class="card-body">
-                    @if($student->logEntries->count() > 0)
+                    @if($logEntries->count() > 0)
                     <table class="table table-sm">
                         <thead>
                             <td class="border-top-0"><b>Trip Type</b></td>
@@ -51,7 +51,7 @@
                             <td class="border-top-0"><b>Duration (Minutes)</b></td>
                         </thead>
                         <tbody>
-                            @foreach($student->logEntries as $logEntry)
+                            @foreach($logEntries as $logEntry)
                             <tr>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->type }}</td>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_out }}</td>
@@ -61,6 +61,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="row justify-content-center">{{ $logEntries->links() }}</div>
                     @else
                     No log entries.
                     @endif

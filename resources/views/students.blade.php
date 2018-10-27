@@ -40,6 +40,7 @@
                 <div class="card-header">Students</div>
 
                 <div class="card-body">
+                    @if(Auth::user()->students->count() > 0)
                     <table class="table table-sm">
                         <thead>
                             <td class="border-top-0"><b>Name</b></td>
@@ -56,6 +57,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                    No students.
+                    @endif
                 </div>
             </div>
         </div>

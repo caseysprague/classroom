@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
@@ -35,5 +36,15 @@ class StudentController extends Controller
         $student->save();
 
         return back()->with('status', $student->name.' has been created!');
+    }
+
+    public function destroy(Request $request, Student $student)
+    {
+        abort_unless($request->user()->students->contains($student), 403, 'Not authorized.');
+
+        $student->logEntries()->delete();
+        $student->delete();
+
+        return redirect('/students')->with('status', "{$student->name} has been deleted!");
     }
 }

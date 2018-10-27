@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mb-4">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
                 <div class="card-header">{{ $student->name }}'s URLs for Check Out</div>
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-4">
         <div class="col-md-8">
             <div class="card card-default">
                 <div class="card-header">{{ $student->name }}'s Log Entries</div>
@@ -68,6 +68,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <form action="{{ url("/student/{$student->uuid}") }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button class="btn btn-danger" type="submit">Delete Student</button>
+        </form>
     </div>
 </div>
 @endsection

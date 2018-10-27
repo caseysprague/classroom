@@ -27,4 +27,9 @@ class LogEntry extends Model
     {
         return $this->time_in ? $this->time_out->diffInMinutes($this->time_in) : null;
     }
+
+    public function getDurationSecondsAttribute()
+    {
+        return $this->time_in ? $this->time_out->diffInSeconds($this->time_in) : null;
+    }
 }

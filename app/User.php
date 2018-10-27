@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Student', 'teacher_id')->orderBy('name');
     }
+
+    public function logEntries()
+    {
+        return $this->hasManyThrough('App\LogEntry', 'App\Student', 'teacher_id', 'student_id');
+    }
 }

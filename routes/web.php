@@ -21,5 +21,7 @@ Route::get('/student/{student}', 'StudentController@show')->name('student');
 Route::post('/student', 'StudentController@store');
 Route::delete('/student/{student}', 'StudentController@destroy');
 
+Route::get('/qr', 'QRCodeController@show');
+
 Route::get('/checkout/{student}/{type}', 'LogController@checkout')->name('checkout');
 Route::get('/checkin/{student}/{logEntry}', 'LogController@checkin')->name('checkin');

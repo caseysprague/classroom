@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">{{ $student->name }}'s URLs for Check Out</div>
+                <div class="card-header">{{ $student->name }}'s Check Out URLs</div>
 
                 <div class="card-body">
                     <div class="d-flex flex-column">
@@ -16,6 +16,7 @@
                                     <input type="text" class="form-control" id="bathroom-url-input" aria-label="Bathroom URL" value="{{ $links['bathroom'] }}" readonly>
                                     <div class="input-group-append">
                                         <copy-button classes="btn btn-primary" copy-value="{{ $links['bathroom'] }}"></copy-button>
+                                        <button type="button" class="btn btn-primary" data-toggle="popover" title="Bathroom QR Code" data-trigger="focus" data-container="body" data-placement="left" data-html="true" data-content="<img width='205px' height='205px' src='{{ $qr['bathroom'] }}' />"><i class="fas fa-qrcode"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -27,6 +28,7 @@
                                     <input type="text" class="form-control" id="library-url-input" aria-label="Library URL" value="{{ $links['library'] }}" readonly>
                                     <div class="input-group-append">
                                         <copy-button classes="btn btn-primary" copy-value="{{ $links['library'] }}"></copy-button>
+                                        <button type="button" class="btn btn-primary" data-toggle="popover" title="Library QR Code" data-trigger="focus" data-container="body" data-placement="left" data-html="true" data-content="<img width='205px' height='205px' src='{{ $qr['library'] }}' />"><i class="fas fa-qrcode"></i></button>
                                     </div>
                                 </div>
                             </div>

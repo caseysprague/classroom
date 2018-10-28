@@ -24,6 +24,10 @@ class StudentController extends Controller
                 'bathroom' => url('/checkout/'.$student->uuid.'/Bathroom'),
                 'library' => url('/checkout/'.$student->uuid.'/Library'),
             ],
+            'qr' => [
+                'bathroom' => url('/qr?url=') . url('/checkout/'.$student->uuid.'/Bathroom'),
+                'library' => url('/qr?url=') . url('/checkout/'.$student->uuid.'/Library'),
+            ],
         ]);
     }
 

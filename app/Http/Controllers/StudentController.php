@@ -19,7 +19,11 @@ class StudentController extends Controller
 
         return view('student')->with([
             'student' => $student,
-            'logEntries' => $student->logEntries()->paginate(15)
+            'logEntries' => $student->logEntries()->paginate(15),
+            'links' => [
+                'bathroom' => url('/checkout/'.$student->uuid.'/Bathroom'),
+                'library' => url('/checkout/'.$student->uuid.'/Library'),
+            ],
         ]);
     }
 

@@ -13,9 +13,9 @@
                             <label for="bathroom-url-input" class="col-sm-2 col-form-label">Bathroom</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="bathroom-url-input" aria-label="Bathroom URL" value="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}" readonly>
+                                    <input type="text" class="form-control" id="bathroom-url-input" aria-label="Bathroom URL" value="{{ $links['bathroom'] }}" readonly>
                                     <div class="input-group-append">
-                                        <copy-button classes="btn btn-primary" copy-value="{{ url('/checkout/'.$student->uuid.'/Bathroom') }}"></copy-button>
+                                        <copy-button classes="btn btn-primary" copy-value="{{ $links['bathroom'] }}"></copy-button>
                                     </div>
                                 </div>
                             </div>
@@ -24,9 +24,9 @@
                             <label for="library-url-input" class="col-sm-2 col-form-label">Library</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="library-url-input" aria-label="Library URL" value="{{ url('/checkout/'.$student->uuid.'/Library') }}" readonly>
+                                    <input type="text" class="form-control" id="library-url-input" aria-label="Library URL" value="{{ $links['library'] }}" readonly>
                                     <div class="input-group-append">
-                                        <copy-button classes="btn btn-primary" copy-value="{{ url('/checkout/'.$student->uuid.'/Library') }}"></copy-button>
+                                        <copy-button classes="btn btn-primary" copy-value="{{ $links['library'] }}"></copy-button>
                                     </div>
                                 </div>
                             </div>

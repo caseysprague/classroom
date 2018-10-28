@@ -1,7 +1,8 @@
 @extends('layouts.minimal')
 
 @section('head')
-	@if($checkoutType == 'Bathroom')
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=mobile-web-app-capable content=yes>
 		<link rel="apple-touch-icon" href="{{ url('/img/bathroom-touch-icon.png') }}">
         <meta name="apple-mobile-web-app-title" content="Bathroom">
 	@elseif($checkoutType == 'Library')

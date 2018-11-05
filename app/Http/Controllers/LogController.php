@@ -9,9 +9,10 @@ class LogController extends Controller
 {
     public function checkout(Student $student, $type)
     {
-        // Maybe we should save their UUID to the session so we don't have to reference it in the view?
-
-        // Before we check them out again, let's add something here to check if they already have a checkout of this type and offer to close it?
+        $student->logEntries()->whereNull('time_in')->each(function($entry) {
+            $entry->time_in = now();
+            $entry->save();
+        });
 
         $logEntry = LogEntry::create([
             'student_id' => $student->uuid,

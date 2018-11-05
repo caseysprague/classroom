@@ -59,6 +59,8 @@ class HomeController extends Controller
         });
 
         return view('home')->with([
+            'students' => $request->user()->students,
+            'logEntries' => $request->user()->logEntries,
             'numberOfTripsByStudentChartData' => $numberOfTripsByStudentChartData,
             'options' => $options,
         ]);

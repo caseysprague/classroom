@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('copy-button', require('./components/CopyButton.vue'));
 Vue.component('bar-chart', require('./components/BarChart.vue'));
+Vue.component('datetime-component', require('./components/DatetimeComponent.vue'));
 
 const app = new Vue({
     el: '#app'

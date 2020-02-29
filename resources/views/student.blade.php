@@ -56,8 +56,8 @@
                             @foreach($logEntries as $logEntry)
                             <tr>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->type }}</td>
-                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_out }}</td>
-                                <td class="pt-2 pb-2 align-middle">{{ $logEntry->time_in }}</td>
+                                <td class="pt-2 pb-2 align-middle"><datetime-component datetime="{{ optional($logEntry->time_out)->toIso8601String() }}" /></td>
+                                <td class="pt-2 pb-2 align-middle"><datetime-component datetime="{{ optional($logEntry->time_in)->toIso8601String() }}" /></td>
                                 <td class="pt-2 pb-2 align-middle">{{ $logEntry->duration_minutes }}</td>
                             </tr>
                             @endforeach
